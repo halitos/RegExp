@@ -1,19 +1,36 @@
-/* 
-Password Validation
-Write a program that should check if each password in an array 
-contains a valid password (see below for password criterias) and return 
-new array with true or false booleans.
-Passwords must 
-- Have at least 5 characters.
-- Have English uppercase letters (A-Z)
-- Have English lowercase letters (a-z)
-- Have numbers (0-9)
-- Have non-alphanumeric symbols ("!", "#", "$", "%", ".")
-Passwords must not be any previous password in the passwords array. 
-Example 1:
-PreviousPassword = ["fhD8!yrjj", "ttkTu.wer3", "dvyyeyY!5", "qwbfj76%", "tytT3729."];
-Expected Result:
-PasswordValidationResult=  [false, false, false, false, true]
+/* Password Validation
+
+Write a program that should check if each password in the input array 
+contains a valid password by satisfying below criterias and return a
+new array with "true" or "false" booleans denoting which password is
+acceptable.
+
+Criterias:
+  1) A password must 
+    - Have at least 5 characters.
+    - Have at least one English uppercase letter (A-Z)
+    - Have at least one English lowercase letter (a-z)
+    - Have at least one number (0-9)
+    - Have at least one non-alphanumeric symbols ("!", "#", "$", "%", ".")
+
+  2) Passwords must not be any previous password in the passwords input array.
+
+Example:
+
+Let's assume function receive following passwords
+ ["tytT3729.", "fhD!yrjj", "ttkTuwer3", "DVYYEYY!5", "qwbfj76%", "Pl3!", "tytT3729.", "12qw"]
+
+Expected result after validation should be
+ [true, false, false, false, false, false, flase, false]
+
+The belows are invalids because
+  - "fhD!yrjj"  doesn't contain number
+  - "ttkTuwer3" doesn't contain special symbol
+  - "DVYYEYY!5" doesn't contain lowercase letter
+  - "qwbfj76%"  doesn't contain uppercase letter
+  - "Pl3!"      doesn't contain at least 5 characters
+  - "tytT3729." is valid as an individual password, but already appeared in the password array
+  - "12qw"      doesn't contain uppercase letter, special symbol and less than 5 characters long
 */
 
 function validatePasswords(passwords) {}
