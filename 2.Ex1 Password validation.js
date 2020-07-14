@@ -33,7 +33,15 @@ The belows are invalids because
   - "12qw"      doesn't contain uppercase letter, special symbol and less than 5 characters long
 */
 
-function validatePasswords(passwords) {}
+const validator = new RegExp(
+  "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{5,})"
+);
+
+function validatePasswords(passwords) {
+  let result = passwords.map((items) => validator.test(items));
+  console.log(result);
+  return result;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
